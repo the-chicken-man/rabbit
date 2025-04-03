@@ -1,6 +1,8 @@
 import openai
+from dotenv import load_dotenv
 import os
 
+load_dotenv()  # Load the .env file
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def chat_with_ai(prompt):
@@ -11,4 +13,3 @@ def chat_with_ai(prompt):
     return response["choices"][0]["message"]["content"]
 
 print(chat_with_ai("Hello, Rabbit!"))
-
