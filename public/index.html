@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+    <script>
+        async function chatWithAI() {
+            const prompt = document.getElementById("prompt").value;
+            const response = await fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ prompt })
+            });
+            const data = await response.json();
+            document.getElementById("response").innerText = data.response;
+        }
+    </script>
+</head>
+<body>
+    <h1>Chat with AI</h1>
+    <input type="text" id="prompt" placeholder="Enter your message">
+    <button onclick="chatWithAI()">Send</button>
+    <p id="response"></p>
+</body>
+</html>
 
