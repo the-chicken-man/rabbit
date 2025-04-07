@@ -2,7 +2,7 @@
 
 ## Simple ai chatbot using openai
 
-This ai was super easy to make and you can fork the repo easily to make your own ai
+This ai was super easy to make using different ai libraries
 
 ## Other features
 
